@@ -88,9 +88,9 @@ Example:
 
 ### **Main regression:**
 
-\[
+$$
 R_{it} = \alpha_i + \beta_1 \cdot \text{PostSampleDummy}_{it} + \beta_2 \cdot \text{PostPublicationDummy}_{it} + \varepsilon_{it}
-\]
+$$
 
 Where:
 - \( R_{it} \) is the return of predictor \( i \) in month \( t \)  
