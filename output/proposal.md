@@ -88,11 +88,16 @@ Example:
 
 ### **Main regression:**
 
-```latex
+\[
 R_{it} = \alpha_i + \beta_1 \cdot \text{PostSampleDummy}_{it} + \beta_2 \cdot \text{PostPublicationDummy}_{it} + \varepsilon_{it}
-```
+\]
 
-Where \( R_{it} \) is the return of predictor \( i \) in month \( t \), and the dummies indicate if the month is post-sample or post-publication.
+Where:
+- \( R_{it} \) is the return of predictor \( i \) in month \( t \)  
+- \( \text{PostSampleDummy}_{it} \) equals 1 if month \( t \) is out-of-sample, 0 otherwise  
+- \( \text{PostPublicationDummy}_{it} \) equals 1 if month \( t \) is post-publication, 0 otherwise  
+- \( \alpha_i \) captures predictor fixed effects  
+- \( \varepsilon_{it} \) is the error term
 
 ---
 
