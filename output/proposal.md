@@ -88,6 +88,7 @@ Example:
 
 ### **Main regression:**
 
+latex ```
 $$
 R_{it} = \alpha_i + \beta_1 \cdot \text{PostSampleDummy}_{it} + \beta_2 \cdot \text{PostPublicationDummy}_{it} + \varepsilon_{it}
 $$
@@ -98,7 +99,7 @@ Where:
 - \( \text{PostPublicationDummy}_{it} \) equals 1 if month \( t \) is post-publication, 0 otherwise  
 - \( \alpha_i \) captures predictor fixed effects  
 - \( \varepsilon_{it} \) is the error term
-
+```
 ---
 
 ### **What is an observation, e.g. a firm, or a firm-year, etc.?**  
