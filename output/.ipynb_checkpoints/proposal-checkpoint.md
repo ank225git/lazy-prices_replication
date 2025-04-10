@@ -12,8 +12,7 @@ https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.12365
 Does publishing academic research findings reduce or eliminate the ability to predict stock returns, contributing to market efficiency by informing investors about mispricings?
 
 **The specific research question we are trying to answer:**  
-Are returns lower or still show the same level of profitability after an academic paper is published.
-
+Are returns lower after a predictor is published?
 
 ---
 
@@ -30,9 +29,10 @@ Specifically, we will compare returns during:
 - The period after the study ends but before publication (out-of-sample), and
 - The period after publication (post-publication).
 
-This design will help us isolate the effects of statistical over-fitting (which causes bias in in-sample results) and the effect of public awareness (which reflects how investors learn from published academic research).
+This will help isolate the effects of statistical bias and investor learning.
+
 ### **In-sample (t₀ to t₁):**  
-This is the period used to identify the predictor. We will test and report strong returns patterns here because the predictor is selected and optimized during this period. There is a high chance of over-fitting or data mining, since researchers know the data and can choose variables that perform well in this exact time frame.
+This is the period used to identify the predictor. We will test and report strong returns here.
 
 To apply a predictor to historical data, we:
 1. Calculate the predictor for each stock using historical information — for example, book-to-market ratio or past 12-month returns.  
