@@ -88,18 +88,19 @@ Example:
 
 ### **Main regression:**
 
-latex ```
+
 $$
 R_{it} = \alpha_i + \beta_1 \cdot \text{PostSampleDummy}_{it} + \beta_2 \cdot \text{PostPublicationDummy}_{it} + \varepsilon_{it}
 $$
 
-Where:
-- \( R_{it} \) is the return of predictor \( i \) in month \( t \)  
-- \( \text{PostSampleDummy}_{it} \) equals 1 if month \( t \) is out-of-sample, 0 otherwise  
-- \( \text{PostPublicationDummy}_{it} \) equals 1 if month \( t \) is post-publication, 0 otherwise  
-- \( \alpha_i \) captures predictor fixed effects  
-- \( \varepsilon_{it} \) is the error term
-```
+\begin{aligned}
+R_{it} & : \text{Return of predictor } i \text{ in month } t \\
+\text{PostSampleDummy}_{it} & : 1 \text{ if month } t \text{ is out-of-sample, 0 otherwise} \\
+\text{PostPublicationDummy}_{it} & : 1 \text{ if month } t \text{ is post-publication, 0 otherwise} \\
+\alpha_i & : \text{Predictor fixed effects} \\
+\varepsilon_{it} & : \text{Error term}
+\end{aligned}
+
 ---
 
 ### **What is an observation, e.g. a firm, or a firm-year, etc.?**  
