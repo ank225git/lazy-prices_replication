@@ -35,18 +35,34 @@ This design will help us isolate the effects of statistical over-fitting (which 
 This is the period used to identify the predictor. We will test and report strong returns patterns here because the predictor is selected and optimized during this period. There is a high chance of over-fitting or data mining, since researchers know the data and can choose variables that perform well in this exact time frame.
 
 To apply a predictor to historical data, we:
-1. Calculate the predictor for each stock using historical information — for example, book-to-market ratio or past 12-month returns.  
+1. Calculate the predictor for each stock using historical information — for example, book-to-market ratio, moor past 12-month returns.  
 2. Rank the stocks based on their predictor values.  
 3. Form a portfolio, usually by going long on the top-ranked stocks (top quintile) and short on the bottom-ranked stocks (bottom quintile).  
 4. Track the portfolio’s performance over time using historical return data.
 
 ### **Out-of-sample (t₁ to t₂):**  
-This is the period after the study ends but before the paper is published. It tests whether the predictor still works when researchers are no longer selecting data — helps detect statistical bias (data mining effects)
+This period begins after the original study ends but before the academic paper is officially published. It allows us to test whether the predictor still performs well when researchers are no longer choosing variables based on in-sample success. In other words, the predictor is applied to new data that was not available during its construction phase.
+
+The goal here is to detect statistical bias, such as over-fitting or data mining. If the returns drop significantly compared to the in-sample period, it suggests that the original results may not generalize well and were possibly influenced by chance patterns in the historical data.
+
+To apply the predictor in the out-of-sample period (t₁ to t₂), we:
+1. Use only historical data available at each point in time (prior to each return period) to calculate the predictor value for each stock.
+2. Rank the stocks from high to low using the frozen predictor values.
+3. Form a long-short portfolio: go long on the top-ranked stocks (top quintile) and short on the bottom-ranked stocks (bottom quintile), as in the in-sample step.
+4. Track the portfolio’s performance during the out-of-sample period using realized future returns — this tests whether the predictor generalizes to new data.
 
 ### **Post-publication (t₂ to t₃):**  
 This is the period after the predictor becomes public. If returns drop further here, it suggests that investors learned about the predictor and traded on it, reducing its effectiveness.
 
 Finally, we will subtract post-publication return decay from out-of-sample return decay to obtain the effects of publishing a predictor.
+
+To apply the predictor in the post-publication period (t₂ to t₃), we:
+1. At each time step, calculate the predictor using data available at that time (if investors are using the published strategy).
+2. Rank stocks again based on predictor values and form the same type of long-short portfolio.
+3. Simulate investor behavior by assuming market participants have read the publication and started using the strategy.
+4. Track the long-short portfolio’s returns through the post-publication period and compare the performance to the out-of-sample period.
+
+
 
 ---
 
