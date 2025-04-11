@@ -140,11 +140,15 @@ The full sample period is **January 1926 to December 2013** in the original pape
 - Predictor sample period and publication date  
 - Market cap, volume, bid-ask spreads  
 - Industry factors (for idiosyncratic risk)
+- CIK
 
 **Nice to have:**
 - Short interest  
 - Analyst forecast revisions  
 - Dividend payment flags
+- Total assest
+- Net income
+- cash flow
 
 ---
 
@@ -157,11 +161,6 @@ The full sample period is **January 1926 to December 2013** in the original pape
   → used to derive predictor definitions and construct the final dataset
 - Compustat Fundamentals 
   - To calculate key accounting-based predictors (e.g., book-to-market, ROE, asset growth)
-  - Variables Needed
-      - Total assest
-      - Net income
-      - cash flow
-      - CIK
 - Predictor metadata 
   - Sample period used in each study  
   - Date of publication (for time labeling)  
