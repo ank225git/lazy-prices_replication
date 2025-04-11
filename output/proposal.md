@@ -155,13 +155,23 @@ The full sample period is **January 1926 to December 2013** in the original pape
 - Monthly CRSP data → request from Professor  
 - 10-K reports → cleaned dataset from Bill McDonald's website (U of Notre Dame)  
   → used to derive predictor definitions and construct the final dataset
-
+- Compustat Fundamentals → To calculate Book-to-market ratio, ROE, Asset Growth
+- 
 ---
 
 ### **How will we collect more data?**
 
 - Retrieve monthly CRSP from Professor  
 - Download cleaned 10-K reports from U of Notre Dame website
+- CRSP
+- Compustat Fundamentals 
+  - To calculate key accounting-based predictors (e.g., book-to-market, ROE, asset growth)  
+- Predictor metadata 
+  - Sample period used in each study  
+  - Date of publication (for time labeling)  
+- MasterIndex_Aggregate_10X_1993-2024.txt
+  - For linking SEC filings and identifying filing dates if using time-sensitive text data
+
 
 ---
 
