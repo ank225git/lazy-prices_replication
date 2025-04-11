@@ -104,18 +104,7 @@ Example:
 
 ### **Main regression:**
 
-
-$$
-R_{it} = \alpha_i + \beta_1 \cdot \text{PostSampleDummy}_{it} + \beta_2 \cdot \text{PostPublicationDummy}_{it} + \varepsilon_{it}
-$$
-
-\begin{aligned}
-R_{it} & : \text{Return of predictor } i \text{ in month } t \\
-\text{PostSampleDummy}_{it} & : 1 \text{ if month } t \text{ is out-of-sample, 0 otherwise} \\
-\text{PostPublicationDummy}_{it} & : 1 \text{ if month } t \text{ is post-publication, 0 otherwise} \\
-\alpha_i & : \text{Predictor fixed effects} \\
-\varepsilon_{it} & : \text{Error term}
-\end{aligned}
+![Main regression](output/figs/main_formula.png)
 
 ---
 
