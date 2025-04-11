@@ -2,6 +2,7 @@ profanswer.ipynb
 /creating/*
 .DS_store
 .ipynb_checkpoints/
+output/.ipynb_checkpoints/
 __pycache__/
 
 
