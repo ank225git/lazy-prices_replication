@@ -104,7 +104,7 @@ Example:
 
 ### **Main regression:**
 
-![Main regression](output/figs/main_formula.png)
+![Main regression](figs/main_formula.png)
 
 ---
 
