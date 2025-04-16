@@ -1,3 +1,14 @@
+Key issues we need to fix!!!!!  BASICALLY --> replicate the predictor used in Lazy Prices, run the portfolio simulation, and report your findings — not to overcomplicate it.
+
+
+1. What exactly are we replicating? (Need to Clarify that your core project is a replication of the lazy prices signal measurement, and not a broad study of multiple predictors.)
+   We mixed two ideas. A.replicating the lazy prices paper B. using various predictors from the OAP
+2. Are we computing and present lazy prices statistics clearly?
+   We did not show that we will recompute detailed stats for lazy prices
+3. Build too much???? Overbuilding,duplicating 
+4. A lot of extra data and predictor
+
+
 # **Research Proposal: Lazy Prices**  
 **Does academic research destroy stock return predictability**  
 https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.12365
