@@ -22,6 +22,8 @@ https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.12365
 **The “bigger” question:**  
 Does publishing academic research findings reduce or eliminate the ability to predict stock returns, contributing to market efficiency by informing investors about mispricings?
 
+Change: How does the performance of the Lazy Prices signal change across in-sample, out-of-sample, and post-publication periods — and what does this tell us about overfitting and investor learning? 
+
 **The specific research question we are trying to answer:**  
 Are returns lower or still show the same level of profitability after an academic paper is published.
 
@@ -73,6 +75,25 @@ To apply the predictor in the post-publication period (t₂ to t₃), we:
 3. Simulate investor behavior by assuming market participants have read the publication and started using the strategy.
 4. Track the long-short portfolio’s returns through the post-publication period and compare the performance to the out-of-sample period.
 
+
+
+Change:
+- **H1 (In-sample):**  
+  The Lazy Prices signal generates strong and statistically significant long-short returns in the in-sample period (1994–2003), when the signal is first developed.  
+  This period is used to discover and optimize the signal. The high performance may partly come from overfitting or data mining.
+
+- **H2 (Out-of-sample):**  
+  The signal’s return decreases in the out-of-sample period (2004–2007), but still remains statistically significant.  
+  This tests if the signal works on new data that was not used during signal construction. If performance drops, it suggests that the original results were possibly too optimistic.
+
+  
+- **H3 (Investor learning):**  
+  In the post-publication period (2008–2014), the signal’s return decreases even more, and may become statistically insignificant.  
+  This may happen because investors read the published paper and start trading based on the strategy, reducing its profit. This would support the idea of semi-strong market efficiency, where public information is quickly priced in.
+
+- **H4 (Stronger decay after publication):**  
+  The return drop from the out-of-sample period to the post-publication period is larger than the drop from the in-sample to out-of-sample period.  
+  This would suggest that the publication itself has a meaningful effect on return decay, beyond just statistical overfitting. It provides evidence that market participants react to academic research once it becomes public.
 
 
 ---
@@ -149,6 +170,15 @@ The full sample period is **January 1926 to December 2013** in the original pape
 - Total assest
 - Net income
 - cash flow
+
+Change:
+Sentiment scores for 10-k
+Monthly firm returns
+Market cap
+Portfolio rankings
+Time range 
+
+
 
 ---
 
