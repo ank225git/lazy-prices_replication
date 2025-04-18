@@ -1,15 +1,6 @@
-Key issues we need to fix!!!!!  BASICALLY --> replicate the predictor used in Lazy Prices, run the portfolio simulation, and report your findings — not to overcomplicate it.
+# **Research Proposal: Lazy Prices**
+By Chris Luo and Anastasiia Kozlova
 
-
-1. What exactly are we replicating? (Need to Clarify that your core project is a replication of the lazy prices signal measurement, and not a broad study of multiple predictors.)
-   We mixed two ideas. A.replicating the lazy prices paper B. using various predictors from the OAP
-2. Are we computing and present lazy prices statistics clearly?
-   We did not show that we will recompute detailed stats for lazy prices
-3. Build too much???? Overbuilding,duplicating 
-4. A lot of extra data and predictor
-
-
-# **Research Proposal: Lazy Prices**  
 **Does academic research destroy stock return predictability**  
 https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.12365
 
@@ -20,64 +11,26 @@ https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.12365
 ### **What do we want to know or what problems are we trying to solve?**
 
 **The “bigger” question:**  
-Does publishing academic research findings reduce or eliminate the ability to predict stock returns, contributing to market efficiency by informing investors about mispricings?
-
-Change: How does the performance of the Lazy Prices signal change across in-sample, out-of-sample, and post-publication periods — and what does this tell us about overfitting and investor learning? 
+Does publishing academic research reduce or eliminate the ability to predict stock returns — contributing to market efficiency by helping investors learn about pricing anomalies?
 
 **The specific research question we are trying to answer:**  
-Are returns lower or still show the same level of profitability after an academic paper is published.
+How does the performance of the Lazy Prices signal change across in-sample, out-of-sample, and post-publication periods — and what does this tell us about overfitting and investor learning?
 
+Our goal is to replicate the **Lazy Prices signal** as described in the paper by Cohen, Malloy, and Nguyen, and apply the methodology from *Does Academic Research Destroy Stock Return Predictability* (McLean & Pontiff, 2016) to evaluate return performance over time.
+
+We will:
+- Measure the Lazy Prices signal using **cosine similarity** between a firm’s 10-K/10-Q filings (all filings available, sorted in chronological order) and its previous reports.
+- Trade on this signal monthly by sorting firms and forming long-short portfolios of the top and bottom quintiles.
+- Evaluate returns across in-sample, out-of-sample, and post-publication periods.
+- Recompute and report portfolio-level statistics and regression-based return decay.
 
 ---
 
 ## **Project Hypotheses**
 
-Our project is testing relationships — specifically, how stock return predictability changes across different time periods (in-sample, out-of-sample, and post-publication).  
-Return predictability means the ability of a known variable (a “predictor”) to forecast future stock returns. So “return predictability decreases,” means that the average returns from trading on that predictor get smaller, meaning that the predictor becomes less useful or informative after it’s been discovered or published.
+Our project tests how **return predictability evolves over time**, specifically when the Lazy Prices signal becomes public knowledge.  
+_Return predictability_ is the ability of a signal to forecast future stock returns.
 
-- **H1:** Return predictability decreases out-of-sample due to statistical bias.  
-- **H2:** Return predictability decreases further post-publication due to investor learning.
-
-Specifically, we will compare returns during:
-- The original study period (in-sample),
-- The period after the study ends but before publication (out-of-sample), and
-- The period after publication (post-publication).
-
-This design will help us isolate the effects of statistical over-fitting (which causes bias in in-sample results) and the effect of public awareness (which reflects how investors learn from published academic research).
-### **In-sample (t₀ to t₁):**  
-This is the period used to identify the predictor. We will test and report strong returns patterns here because the predictor is selected and optimized during this period. There is a high chance of over-fitting or data mining, since researchers know the data and can choose variables that perform well in this exact time frame.
-
-To apply a predictor to historical data, we:
-1. Calculate the predictor for each stock using historical information — for example, book-to-market ratio, moor past 12-month returns.  
-2. Rank the stocks based on their predictor values.  
-3. Form a portfolio, usually by going long on the top-ranked stocks (top quintile) and short on the bottom-ranked stocks (bottom quintile).  
-4. Track the portfolio’s performance over time using historical return data.
-
-### **Out-of-sample (t₁ to t₂):**  
-This period begins after the original study ends but before the academic paper is officially published. It allows us to test whether the predictor still performs well when researchers are no longer choosing variables based on in-sample success. In other words, the predictor is applied to new data that was not available during its construction phase.
-
-The goal here is to detect statistical bias, such as over-fitting or data mining. If the returns drop significantly compared to the in-sample period, it suggests that the original results may not generalize well and were possibly influenced by chance patterns in the historical data.
-
-To apply the predictor in the out-of-sample period (t₁ to t₂), we:
-1. Use only historical data available at each point in time (prior to each return period) to calculate the predictor value for each stock.
-2. Rank the stocks from high to low using the frozen predictor values.
-3. Form a long-short portfolio: go long on the top-ranked stocks (top quintile) and short on the bottom-ranked stocks (bottom quintile), as in the in-sample step.
-4. Track the portfolio’s performance during the out-of-sample period using realized future returns — this tests whether the predictor generalizes to new data.
-
-### **Post-publication (t₂ to t₃):**  
-This is the period after the predictor becomes public. If returns drop further here, it suggests that investors learned about the predictor and traded on it, reducing its effectiveness.
-
-Finally, we will subtract post-publication return decay from out-of-sample return decay to obtain the effects of publishing a predictor.
-
-To apply the predictor in the post-publication period (t₂ to t₃), we:
-1. At each time step, calculate the predictor using data available at that time (if investors are using the published strategy).
-2. Rank stocks again based on predictor values and form the same type of long-short portfolio.
-3. Simulate investor behavior by assuming market participants have read the publication and started using the strategy.
-4. Track the long-short portfolio’s returns through the post-publication period and compare the performance to the out-of-sample period.
-
-
-
-Change:
 - **H1 (In-sample):**  
   The Lazy Prices signal generates strong and statistically significant long-short returns in the in-sample period (1994–2003), when the signal is first developed.  
   This period is used to discover and optimize the signal. The high performance may partly come from overfitting or data mining.
@@ -86,7 +39,6 @@ Change:
   The signal’s return decreases in the out-of-sample period (2004–2007), but still remains statistically significant.  
   This tests if the signal works on new data that was not used during signal construction. If performance drops, it suggests that the original results were possibly too optimistic.
 
-  
 - **H3 (Investor learning):**  
   In the post-publication period (2008–2014), the signal’s return decreases even more, and may become statistically insignificant.  
   This may happen because investors read the published paper and start trading based on the strategy, reducing its profit. This would support the idea of semi-strong market efficiency, where public information is quickly priced in.
@@ -95,151 +47,181 @@ Change:
   The return drop from the out-of-sample period to the post-publication period is larger than the drop from the in-sample to out-of-sample period.  
   This would suggest that the publication itself has a meaningful effect on return decay, beyond just statistical overfitting. It provides evidence that market participants react to academic research once it becomes public.
 
+---
+
+### **Time Period Definitions and Portfolio Construction**
+
+We adopt the time-period structure from McLean & Pontiff (2016) and apply it to the Lazy Prices signal. The Lazy Prices signal is based on **cosine similarity** between a firm’s current 10-K/10-Q and its previous one. We sort firms monthly and form long-short portfolios using this signal.
 
 ---
 
-### **What are our metrics of success? Baseline from prior work:**
+#### **In-sample (t0 to t1-1):**
 
-- **Metrics:** Decline in long-short portfolio returns  
-- **Baseline:**
-  - 26% average return decay out-of-sample  
-  - 58% average return decay post-publication  
-  - Implied publication effect: ~32%
+This is the period during which the Lazy Prices signal is developed and optimized. Since researchers have access to the full data during this phase, strong performance may reflect overfitting or data mining.
+
+To apply the signal:
+1. For each firm, compute the cosine similarity between the current filing and the most recent prior filing (10-K/Q).
+2. Rank firms by their similarity scores.
+3. Form a long-short portfolio:  
+   - **Long** the top 20% (highest similarity — market may underreact)  
+   - **Short** the bottom 20% (lowest similarity — market may react faster)
+4. Track monthly portfolio returns using historical data.
+
+
+#### **Out-of-sample (t1 to t2-1):**
+
+This period begins after the in-sample study window ends but before the Lazy Prices paper is officially published. The goal is to test whether the signal generalizes to new data not used in the model design.
+
+We apply the same trading strategy:
+1. Use only information available up to each point in time to calculate similarity scores.
+2. Rank firms by similarity.
+3. Form long-short portfolios using the top and bottom 20%.
+4. Track monthly portfolio performance during this window.
+
+A drop in returns relative to the in-sample period would indicate possible overfitting in the original construction.
+
+
+#### **Post-publication (t2 to t3):**
+
+This is the period after the Lazy Prices paper becomes public. If returns drop significantly here, it suggests that investors may have adopted the strategy, leading to faster price adjustment and reduced profitability — consistent with semi-strong market efficiency.
+
+We simulate investor behavior as if the strategy is known:
+1. Compute similarity using only past data available at each time.
+2. Rank firms and form the same long-short portfolios.
+3. Track monthly returns and compare them to the out-of-sample period.
+
+If the return decline is greater here than in the out-of-sample period, it supports the hypothesis that publication itself accelerates return decay.
+
+
+
+
+## **What are our metrics of success? Baseline from prior work:**
+
+- **Metrics:** Change in monthly long-short portfolio returns across periods  
+- **Baseline (from McLean & Pontiff):**
+  - ~26% return decay out-of-sample
+  - ~58% return decay post-publication
+  - Publication effect: ~32% return drop
 
 ---
 
 ## **Necessary Data**
 
-### **What does the final dataset need to look like (mostly dictated by the question and the availability of data):**  
-A panel dataset (observations over time for multiple entities) of monthly long-short portfolio returns for each predictor, labeled by in-sample, out-of-sample, and post-publication periods.
+### **What does the final dataset need to look like?**
 
-- Entities: Different predictors (97 of them in the original paper, ~12 for our replication)  
-- Time: Monthly return data  
-- Variables: Predictor Portfolio returns, time period labels (in-sample, out-of-sample, post-publication), etc.
+A panel dataset of **monthly Lazy Prices long-short portfolio returns**, labeled by period type.
 
-Each row will be:
+- **Entities:** Lazy Prices signal portfolio  
+- **Time:** Monthly data 
+- **Variables:** 
+  - Month  
+  - Portfolio return  
+  - Time period label (in-sample / out-of-sample / post-publication)  
+  - Signal (similarity score ) 
+  - Top/bottom quintile returns  
 
-```
-[Predictor i, Month t, Return, Time Period Type]
-```
+_Example:_
 
-Example:
+For each firm:
 
-| predictor      | month    | return | post_sample | post_publication |
-|----------------|----------|--------|-------------|------------------|
-| book-to-market | 2001-01  | 0.006  | 0           | 0                |
-| book-to-market | 2001-02  | 0.005  | 1           | 0                |
-| volatility     | 2001-01  | 0.010  | 0           | 0                |
-| volatility     | 2001-02  | 0.004  | 0           | 1                |
+| month    | avg_ret | period_type       | similarity_sig |
+|----------|---------|-------------------|----------------|
+| 2001-01  | 0.006   | in_sample         | 0.745          |
+| 2005-02  | 0.004   | out_of_sample     | 0.722          |
+| 2010-03  | 0.001   | post_publication  | 0.715          |
 
 ---
 
 ### **Main regression:**
 
-![Main regression](figs/main_formula.png)
+![Main regression](figs/main_formula_revised.png)
 
 ---
 
-### **What is an observation, e.g. a firm, or a firm-year, etc.?**  
-Observation: A predictor-month (i.e., monthly return of a long-short portfolio formed using one predictor).
+### **What is an observation?**  
+One month of Lazy Prices long-short portfolio returns.
 
 ### **What is the sample period?**  
-The full sample period is **January 1926 to December 2013** in the original paper. Each predictor will have its own in-sample, out-of-sample, and post-publication sub-periods, based on the original study period and the publication date of the corresponding academic paper.
+In the Lazy Prices paper: January 1994 to December 2014;  
+(in-sample: 1994–2003, out-of-sample: 2004–2007, post-publication: 2008–2014)
+Project time cutoffs may be adjusted to include more data.
 
-### **What are the sample conditions? (Years, restrictions you anticipate)**  
-- S&P 500 common stocks only (CRSP share codes 10 and 11)  
-- Exclude financial companies and companies that have very small market capitalization  
-- Publicly available variables only: stock prices and returns (from CRSP) and accounting data from company financial statements (Compustat)
+### **What are the sample conditions?**
+- Publicly listed U.S. stocks from CRSP  
+- Exclude financials and microcap firms  
+- Use only publicly available filings (10-Ks and 10-Qs)  
+- Firm must have consecutive filings to compute similarity
 
 ---
 
 ### **What variables are absolutely necessary and what would you like to have if possible?**
 
 **Absolutely necessary:**
-- Monthly stock returns  
-- Predictor values  
-- Predictor sample period and publication date  
-- Market cap, volume, bid-ask spreads  
-- Industry factors (for idiosyncratic risk)
-- CIK
+- Cosine similarity scores (Lazy Prices signal)
+- Monthly firm returns (CRSP)
+- Filing dates and CIKs (from 10-Ks / MasterIndex)
+- Time range label
 
 **Nice to have:**
-- Short interest  
-- Analyst forecast revisions  
-- Dividend payment flags
-- Total assest
-- Net income
-- cash flow
-
-Change:
-Sentiment scores for 10-k
-Monthly firm returns
-Market cap
-Portfolio rankings
-Time range 
-
-
+- Market cap
+- Portfolio rankings and weights
+- Short interest
+- Analyst forecast revisions
+- Dividend flags
+- Total assets, net income, cash flow (Compustat)
 
 ---
 
-### **What data do we have and what data do we need?**
+## **What data do we have and what data do we need?**
 
-**Have:** Paper  
+**Have:**
+- Lazy Prices paper  
+- CRSP monthly return data (shared by professor)  
+- Access to cleaned 10-K/Q dataset from Notre Dame  
+- MasterIndex file to map filings
+
 **Need:**
-- Monthly CRSP data → request from Professor  
-- 10-K reports → cleaned dataset from Bill McDonald's website (U of Notre Dame)  
-  → used to derive predictor definitions and construct the final dataset
-- Compustat Fundamentals 
-  - To calculate key accounting-based predictors (e.g., book-to-market, ROE, asset growth)
-- Predictor metadata 
-  - Sample period used in each study  
-  - Date of publication (for time labeling)  
-- MasterIndex_Aggregate_10X_1993-2024.txt
-  - For linking SEC filings and identifying filing dates if using time-sensitive text data
+- Extract firm text data from 10-Ks and 10-Qs  
+- Calculate cosine similarity between current and previous reports  
+- Merge with CRSP returns using CIK/PERMNO mapping
 
 ---
 
-### **How will we collect more data?**
+## **How will we collect and process the data?**
 
-- Retrieve monthly CRSP from Professor  
-- Download cleaned 10-K reports from U of Notre Dame website
-- Download or reconstruct predictor formulas using prior academic literature  
-- Pull Compustat firm fundamentals from WRDS  
-- Cross-reference firm identifiers (CIK, PERMNO, CUSIP) for dataset merging
-
-
+- Download cleaned 10-Ks from Notre Dame (McDonald’s repository)
+- Parse text filings and compute cosine similarity between firm reports at t and t−1
+- Use CIKs and dates to match with CRSP monthly returns
 
 ---
 
-### **Raw inputs and folder structure**
+## **Raw inputs and folder structure**
+/data/ 
+  /raw/ 
+    crsp_monthly.csv 
+    master_index.txt 
+    /10_x_cleaned/....
+  /processed/ 
+    lazy_prices_returns.csv 
+/code/ 
+  compute_similarity.ipynb 
+  build_portfolio.ipynb 
+  run_regression.ipynb 
+/output/ 
+  proposal.md 
+  summary_results.csv 
+  figs/...
 
-```
-/data/
-    /raw/
-        crsp_monthly.csv
-        predictor_definitions.csv
-        /10_k-cleaned/…
-    /processed/
-        predictor_returns.csv
-/code/
-    clean_crsp.ipynb
-    build_sentiment.ipynb
-    build_portfolios.ipynb
-    run_analysis.ipynb
-/output/
-    proposal.md
-    proposal_final.md
-    summary_results.csv
-    figs/
-```
+  ---
 
----
+## **How we will transform raw data into the final dataset**
 
-### **Speculation about transforming data into its final form**
+1. Clean and align CRSP returns with 10-K/Q filing dates  
+2. Compute signal using cosine similarity for each firm’s filings  
+3. Sort firms monthly based on signal strength and construct long-short portfolios (top 20% vs bottom 20%)  
+4. Label time periods and calculate monthly returns  
+5. Run regression to estimate return decay and test investor learning hypotheses  
 
-1. Clean CRSP and align monthly returns  
-2. Create 12 predictors using historical definitions and sentimental analysis  
-3. Form long-short portfolios by predictor using top and bottom quintiles  
-4. Label time periods (in-sample, out-of-sample, post-publication)  
-5. Run regressions to estimate return decay and publication effect
+## **Potential project expansion**
 
+Compare Lazy Prices statistics to the anomalies presented in the OAP project.
