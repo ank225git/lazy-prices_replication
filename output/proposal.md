@@ -6,9 +6,7 @@ https://onlinelibrary.wiley.com/doi/abs/10.1111/jofi.12365
 
 ---
 
-## **Research Question**
-
-### **What do we want to know or what problems are we trying to solve?**
+## **Research Objectives and Question**
 
 **The “bigger” question:**  
 Does publishing academic research reduce or eliminate the ability to predict stock returns — contributing to market efficiency by helping investors learn about pricing anomalies?
@@ -26,7 +24,7 @@ We will:
 
 ---
 
-## **Project Hypotheses**
+## **Hypotheses**
 
 Our project tests how **return predictability evolves over time**, specifically when the Lazy Prices signal becomes public knowledge.  
 _Return predictability_ is the ability of a signal to forecast future stock returns.
@@ -55,7 +53,7 @@ We adopt the time-period structure from McLean & Pontiff (2016) and apply it to 
 
 ---
 
-#### **In-sample (t0 to t1-1):**
+#### **In-Sample Period (1994–2003):**
 
 This is the period during which the Lazy Prices signal is developed and optimized. Since researchers have access to the full data during this phase, strong performance may reflect overfitting or data mining.
 
@@ -68,7 +66,7 @@ To apply the signal:
 4. Track monthly portfolio returns using historical data.
 
 
-#### **Out-of-sample (t1 to t2-1):**
+#### **Out-of-Sample Period (2004–2007):**
 
 This period begins after the in-sample study window ends but before the Lazy Prices paper is officially published. The goal is to test whether the signal generalizes to new data not used in the model design.
 
@@ -81,7 +79,7 @@ We apply the same trading strategy:
 A drop in returns relative to the in-sample period would indicate possible overfitting in the original construction.
 
 
-#### **Post-publication (t2 to t3):**
+#### **Post-Publication Period (2008–2014):**
 
 This is the period after the Lazy Prices paper becomes public. If returns drop significantly here, it suggests that investors may have adopted the strategy, leading to faster price adjustment and reduced profitability — consistent with semi-strong market efficiency.
 
@@ -95,7 +93,7 @@ If the return decline is greater here than in the out-of-sample period, it suppo
 
 
 
-## **What are our metrics of success? Baseline from prior work:**
+## **Evaluation Metrics and Benchmarks:**
 
 - **Metrics:** Change in monthly long-short portfolio returns across periods  
 - **Baseline (from McLean & Pontiff):**
@@ -107,7 +105,7 @@ If the return decline is greater here than in the out-of-sample period, it suppo
 
 ## **Necessary Data**
 
-### **What does the final dataset need to look like?**
+### **Final Dataset Structure**
 
 A panel dataset of **monthly Lazy Prices long-short portfolio returns**, labeled by period type.
 
@@ -138,15 +136,15 @@ For each firm:
 
 ---
 
-### **What is an observation?**  
+### **Observation?**  
 One month of Lazy Prices long-short portfolio returns.
 
-### **What is the sample period?**  
+### **Sample period?**  
 In the Lazy Prices paper: January 1994 to December 2014;  
 (in-sample: 1994–2003, out-of-sample: 2004–2007, post-publication: 2008–2014)
 Project time cutoffs may be adjusted to include more data.
 
-### **What are the sample conditions?**
+### **Sample conditions?**
 - Publicly listed U.S. stocks from CRSP  
 - Exclude financials and microcap firms  
 - Use only publicly available filings (10-Ks and 10-Qs)  
@@ -154,7 +152,7 @@ Project time cutoffs may be adjusted to include more data.
 
 ---
 
-### **What variables are absolutely necessary and what would you like to have if possible?**
+### **Essential and Supplementary Variables**
 
 **Absolutely necessary:**
 - Cosine similarity scores (Lazy Prices signal)
@@ -172,22 +170,22 @@ Project time cutoffs may be adjusted to include more data.
 
 ---
 
-## **What data do we have and what data do we need?**
+## **Available and Required Data**
 
-**Have:**
+**Available:**
 - Lazy Prices paper  
 - CRSP monthly return data (shared by professor)  
 - Access to cleaned 10-K/Q dataset from Notre Dame  
 - MasterIndex file to map filings
 
-**Need:**
+**Required:**
 - Extract firm text data from 10-Ks and 10-Qs  
 - Calculate cosine similarity between current and previous reports  
 - Merge with CRSP returns using CIK/PERMNO mapping
 
 ---
 
-## **How will we collect and process the data?**
+## **Data Collection and Processing Plan**
 
 - Download cleaned 10-Ks from Notre Dame (McDonald’s repository)
 - Parse text filings and compute cosine similarity between firm reports at t and t−1
@@ -214,7 +212,7 @@ Project time cutoffs may be adjusted to include more data.
 
   ---
 
-## **How we will transform raw data into the final dataset**
+## **Data Transformation Process**
 
 1. Clean and align CRSP returns with 10-K/Q filing dates  
 2. Compute signal using cosine similarity for each firm’s filings  
