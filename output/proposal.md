@@ -51,7 +51,6 @@ _Return predictability_ is the ability of a signal to forecast future stock retu
 
 We adopt the time-period structure from McLean & Pontiff (2016) and apply it to the Lazy Prices signal. The Lazy Prices signal is based on **cosine similarity** between a firm’s current 10-K/10-Q and its previous one. We sort firms monthly and form long-short portfolios using this signal.
 
----
 
 #### **In-Sample Period (1994–2003):**
 
@@ -130,7 +129,7 @@ For each firm:
 
 ---
 
-### **Main regression:**
+### **Regression Equation:**
 
 ![Main regression](figs/main_formula_revised.png)
 
@@ -194,6 +193,7 @@ Project time cutoffs may be adjusted to include more data.
 ---
 
 ## **Raw inputs and folder structure**
+```
 /data/ 
   /raw/ 
     crsp_monthly.csv 
@@ -209,7 +209,7 @@ Project time cutoffs may be adjusted to include more data.
   proposal.md 
   summary_results.csv 
   figs/...
-
+```
   ---
 
 ## **Data Transformation Process**
