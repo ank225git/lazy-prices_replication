@@ -5,6 +5,9 @@ profanswer.ipynb
 output/.ipynb_checkpoints/
 __pycache__/
 
+# final-specific
+data/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
