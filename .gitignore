@@ -13,6 +13,8 @@ data/raw/csrp_data/crsp_data.csv
 /data/processed/full_docdict.csv
 /data/processed/full_docdict.zip
 
+/data/supplement/ccm_from_class/
+
 
 
 # Byte-compiled / optimized / DLL files
