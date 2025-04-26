@@ -11,6 +11,8 @@ data/raw/lm_summaries/Loughran-McDonald_10X_Summaries_1993-2024.csv
 data/raw/csrp_data/crsp_data.csv
 
 /data/processed/full_docdict.csv
+/data/processed/full_docdict.zip
+
 
 
 # Byte-compiled / optimized / DLL files
