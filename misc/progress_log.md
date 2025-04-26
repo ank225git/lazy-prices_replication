@@ -11,3 +11,8 @@ I also used the 10X Summaries: 1993-2024 file while doing this, but it might be 
 
 
 Created `temp/` folder to put any intermediate output in
+
+created sample build file
+
+created file that build the whole dictionary csv
+

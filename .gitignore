@@ -10,6 +10,8 @@ data/raw/lm_dictionaries/Loughran-McDonald_10X_DocumentDictionaries_1993-2024.tx
 data/raw/lm_summaries/Loughran-McDonald_10X_Summaries_1993-2024.csv
 data/raw/csrp_data/crsp_data.csv
 
+/data/processed/full_docdict.csv
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
