@@ -15,6 +15,8 @@ data/raw/csrp_data/crsp_data.csv
 
 /data/supplement/ccm_from_class/
 
+data/processed/full_similarity_with_returns-RIGHT.csv
+
 
 
 # Byte-compiled / optimized / DLL files
