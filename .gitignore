@@ -17,7 +17,8 @@ data/raw/csrp_data/crsp_data.csv
 
 data/processed/full_similarity_with_returns-RIGHT.csv
 data/processed/filtered_portfolio_returns-RIGHT.csv
-
+data/processed/filtered_portfolio_returns-PROP.csv
+data/processed/filtered_portfolio_returns-WINS.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
