@@ -20,6 +20,8 @@ data/processed/filtered_portfolio_returns-RIGHT.csv
 data/processed/filtered_portfolio_returns-PROP.csv
 data/processed/filtered_portfolio_returns-WINS.csv
 
+data/processed/OAP_signal_returns.csv
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
