@@ -17,10 +17,17 @@ data/raw/csrp_data/crsp_data.csv
 
 data/processed/full_similarity_with_returns-RIGHT.csv
 data/processed/filtered_portfolio_returns-RIGHT.csv
-data/processed/filtered_portfolio_returns-PROP.csv
-data/processed/filtered_portfolio_returns-WINS.csv
 
-data/processed/OAP_signal_returns.csv
+# used in analysis
+# data/processed/filtered_portfolio_returns-PROP.csv
+# data/processed/filtered_portfolio_returns-WINS.csv
+# data/processed/OAP_signal_returns.csv
+
+data/processed/sp500_monthly.csv
+data/processed/sp500_fred_monthly.csv
+data/processed/step9_portfolio_returns.csv
+
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
