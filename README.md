@@ -60,11 +60,11 @@ lazy-prices_replication/
 
 | Dataset Name                         | Source |
 |--------------------------------------|--------|
-| SEC EDGAR 10-K Filings              | [SEC] (https://www.sec.gov) |
+| SEC EDGAR 10-K Filings              | [SEC](https://www.sec.gov) |
 | CRSP Monthly Stock Returns          | [WRDS](https://wrds-www.wharton.upenn.edu/) |
-| Loughran-McDonald 10-K Dictionaries | [LM Dataset] (https://sraf.nd.edu) |
-| Open Asset Pricing Signals (OAP)    | [Global-Q] (https://www.openassetpricing.com) |
-| CIK–Ticker Mapping                  | [SEC] (https://www.sec.gov) |
+| Loughran-McDonald 10-K Dictionaries | [LM Dataset](https://sraf.nd.edu) |
+| Open Asset Pricing Signals (OAP)    | [Global-Q](https://www.openassetpricing.com) |
+| CIK–Ticker Mapping                  | [SEC](https://www.sec.gov) |
 | Compustat/CRSP Class File           | WRDS Compustat-CRSP Merged |
 
 ---
